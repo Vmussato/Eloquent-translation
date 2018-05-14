@@ -1,6 +1,6 @@
 {{meta {load_files: ["code/chapter/07_robot.js", "code/animatevillage.js"], zip: html}}}
 
-# Project: A Robot
+# Projeto: Um Robô
 
 {{quote {author: "Edsger Dijkstra", title: "The Threats to Computing Science", chapter: true}
 
@@ -11,6 +11,10 @@ quote}}
 
 {{index "artificial intelligence", "Dijkstra, Edsger", "project chapter", "reading code", "writing code"}}
 
+Em capítulos de projeto eu vou parar de te falar de teoria por um breve momento e ao invés disso nós vamos trabalhar em um programa juntos. Teoria é necessária para aprender a programar, mas ler e entender programas de verdade é tão importante quanto.
+
+Nosso projeto neste capítulo é de construir um autômato, um pequeno programa que execute uma tarefa em um mundo virtual. Nosso autômato vai ser um robô carteiro trazendo e levando pacotes.
+
 In "project" chapters, I'll stop pummeling you with new theory for a
 brief moment and instead we'll work through a program together. Theory
 is necessary to learn to program, but reading and understanding actual
@@ -20,9 +24,11 @@ Our project in this chapter is to build an ((automaton)), a little
 program that performs a task in a ((virtual world)). Our automaton
 will be a mail-delivery ((robot)) picking up and dropping off parcels.
 
-## Meadowfield
+## Meadowfield (Campo Prado)
 
 {{index "roads array"}}
+
+A aldeia de Campo Prado não é muito grande. Ela consiste de onze lugares com quatorze estradas entre eles. Ela pode ser representada com este array de estradas:
 
 The village of ((Meadowfield)) isn't very big. It consists of eleven
 places with fourteen roads between them. It can be described with this
@@ -41,6 +47,10 @@ const roads = [
 ```
 
 {{figure {url: "img/village2x.png", alt: "The village of Meadowfield"}}}
+
+A rede de estradas da aldeia forma um gráfico.  Um gráfico é uma coleção de pontos (lugares na aldeia) com linhas entre as (estradas). esse gráfico vai ser o mundo em que o nosso robô se move.
+
+O array de strings não é muito fácil de se trabalhar. O que nós estamos interessados é nos destinos que podemos alcançar a partir de um determinado local. Vamos converter a lista de estradas para uma estrutura de dados que, para cada local, nos diga para onde podemos ir a partir dele.
 
 The network of roads in the village forms a _((graph))_. A graph is a
 collection of points (places in the village) with lines between them
