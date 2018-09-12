@@ -26,7 +26,7 @@ will be a mail-delivery ((robot)) picking up and dropping off parcels.
 
 ## Meadowfield (Campo Prado)
 
-{{index "roads array"}}
+{{index "roads array"}} 
 
 A aldeia de Campo Prado não é muito grande. Ela consiste de onze lugares com quatorze estradas entre eles. Ela pode ser representada com este array de estradas:
 
