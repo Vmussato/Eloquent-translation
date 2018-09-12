@@ -83,6 +83,8 @@ function buildGraph(edges) {
 const roadGraph = buildGraph(roads);
 ```
 
+Dado um array de 
+
 Given an array of edges, `buildGraph` creates a map object that, for
 each node, stores an array of connected nodes.
 
