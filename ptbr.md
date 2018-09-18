@@ -83,28 +83,36 @@ function buildGraph(edges) {
 const roadGraph = buildGraph(roads);
 ```
 
-Dado um array de 
+Dado um array de arestas `buildGraph` cria um objeto mapa que, para cada nó, armazena um array de nós conectados.
 
 Given an array of edges, `buildGraph` creates a map object that, for
 each node, stores an array of connected nodes.
 
 {{index "split method"}}
 
+Ele usa o método `split` para ir da estrada de strings, que tem o formulario `"Start-End"`, para um array de dois elementos que contem o inicio e o fim como strings separadas.
+
 It uses the `split` method to go from the road strings, which have the
 form `"Start-End"`, to two-element arrays containing the start and end
 as separate strings.
 
-## The task
+## A tarefa
+
+Nosso ((robo)) vai se mover através do vilarejo. Vai haver entregas em vários lugares, cada um endereçado para um outro lugar. O robo coleta entregas quando ele chega nelas, e as entrega quando chega nos seus destinos.
 
 Our ((robot)) will be moving around the village. There will be parcels
 in various places, each addressed to some other place. The robot picks
 up parcels when it comes to them, and delivers them when it arrives at
 their destination.
 
+O automato precisa decidir, em cada ponto, para onde ir em seguida. Ele terminou seu trabalho quando cada pacote foi entregue.
+
 The automaton must decide, at each point, where to go next. It has
 finished its task when all parcels have been delivered.
 
 {{index simulation, "virtual world"}}
+
+Para ser capaz de simular este processo, precisamos definir um mundo virtual que sejamos capazes de descrever. Esse modelo nos mostra onde o robô está e onde os pacotes estão. Quando o robô decide se mover para algum lugar, precisamos atualizar o modelo que reflete esta nova situação.
 
 To be able to simulate this process, we must define a virtual world
 that can describe it. This model tells us where the robot is and where
