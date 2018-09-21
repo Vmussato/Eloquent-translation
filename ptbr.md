@@ -119,6 +119,10 @@ that can describe it. This model tells us where the robot is and where
 the parcels are. When the robot has decided to move somewhere, we need
 to update the model to reflect the new situation.
 
+Se você está pensando em termos de orientação a objeto, o seu primeiro impulso poderia ser o de definir objetos para todos os elementos deste mundo. Uma classe para o robô, uma para o pacote, talvez uma para os locais. Estes poderiam então armazenar propriedades que descrevam o seu estado atual, tais como a quantidade de pacotes para cada destino, que nós poderiamos mudar ao atualizar o mundo.
+
+Isso está errado.
+
 If you're thinking in terms of ((object-oriented programming)), your
 first impulse might be to start defining objects for the various
 elements in the world. A ((class)) for the robot, one for a parcel,
